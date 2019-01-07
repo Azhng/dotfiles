@@ -1,0 +1,10 @@
+/*
+!/.bin
+!/.config
+/.config/*
+!/.config/nvim
+!/.zshrc
+!/.zsh_env
+!/.zsh_alias
+!/.gitignore
+!/.gitconfig
