@@ -1,0 +1,2 @@
+export PATH=$HOME/.cargo/bin:$HOME/.gvm/gos/go1.11.4/bin:$PATH
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64

@@ -1,0 +1,3 @@
+alias vim="nvim -u ~/.config/nvim/init.vim"
+alias cat=bat
+alias mk=make
