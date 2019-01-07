@@ -32,9 +32,13 @@ filetype plugin indent on
 let g:SimpylFold_docstring_preview=1
 
 set nu
-
 set splitbelow
 set splitright
+set foldmethod=indent
+set foldlevel=99
+set clipboard=unnamed
+set mouse=a
+set nomodeline
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -42,16 +46,12 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nmap <silent> <C-N> :NERDTreeToggle<CR>
 
-set foldmethod=indent
-set foldlevel=99
-
 nnoremap <space> za
 
 inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
 inoremap {{     {
 inoremap {}     {}
-
 
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
@@ -99,6 +99,4 @@ call togglebg#map("<F5>")
 
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
-set clipboard=unnamed
-set mouse=a
 
