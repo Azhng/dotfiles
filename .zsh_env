@@ -1,3 +1,5 @@
-export PATH=$HOME/.cargo/bin:$HOME/.gvm/gos/go1.11.4/bin:$PATH
+export PATH=$HOME/.cargo/bin:$HOME/.gvm/gos/go1.11.4/bin:$HOME/.local/bin:$PATH
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 export WINDOWID=$(xdotool getwindowfocus)
+source $HOME/.local/bin/bev
+

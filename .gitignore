@@ -8,3 +8,9 @@
 !/.zsh_alias
 !/.gitignore
 !/.gitconfig
+!/.local
+/.local/*
+!/.local/bin
+!/.local/share/
+/.local/share/*
+!/.local/share/zsh_completion.d
