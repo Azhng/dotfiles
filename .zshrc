@@ -1,12 +1,15 @@
-export ZSH="/home/az/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="agnoster"
 
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
-DEFAULT_USER="az"
+DEFAULT_USER=$USER
 
 source $ZSH/oh-my-zsh.sh
 
 source ~/.zsh_env
 source ~/.zsh_alias
-source /home/az/.gvm/scripts/gvm
+
+if command -v >/dev/null; then
+  source $HOME/.gvm/scripts/gvm
+fi

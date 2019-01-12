@@ -75,7 +75,7 @@ set listchars=eol:$,tab:>-,trail:~,space:~,extends:>,precedes:<
 set tabstop=2 shiftwidth=2 expandtab
 
 let g:ycm_autoclose_preview_window_after_completion=0
-let g:ycm_global_ycm_extra_conf = '/home/az/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '$HOME/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nmap <C-b><C-b> :GitGutterToggle<CR>
 let g:gitgutter_highlight_lines = 1

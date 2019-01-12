@@ -11,6 +11,8 @@
 !/.local
 /.local/*
 !/.local/bin
+/.local/bin/nvim
+/.local/bin/bat
 !/.local/share/
 /.local/share/*
 !/.local/share/zsh_completion.d
