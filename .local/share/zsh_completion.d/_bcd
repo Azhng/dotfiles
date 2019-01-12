@@ -1,0 +1,6 @@
+#compdef bcd
+
+_bcd() { 
+    _arguments \
+      ': :_path_files -W "$HOME/src/github.com" -/'
+}

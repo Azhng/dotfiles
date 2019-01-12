@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+bcd()
+{
+  cd $HOME/src/github.com/$1
+}
