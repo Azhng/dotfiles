@@ -9,7 +9,3 @@ source $ZSH/oh-my-zsh.sh
 
 source ~/.zsh_env
 source ~/.zsh_alias
-
-if command -v >/dev/null; then
-  source $HOME/.gvm/scripts/gvm
-fi
