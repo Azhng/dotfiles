@@ -98,5 +98,5 @@ endif
 call togglebg#map("<F5>")
 
 let NERDTreeIgnore=['\.pyc$', '\~$']
-
+let $VIMRUNTIME='$HOME/.local/share/nvim/runtime'
 
