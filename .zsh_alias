@@ -1,4 +1,5 @@
 alias vim='VIMRUNTIME="$HOME/.local/share/nvim/runtime" nvim'
+alias cat=bat
 alias mk=make
 alias cdw="cd $HOME/src/github.com/"
 alias sctl=systemctl
