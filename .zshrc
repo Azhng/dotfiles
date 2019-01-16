@@ -9,3 +9,4 @@ source $ZSH/oh-my-zsh.sh
 
 source ~/.zsh_env
 source ~/.zsh_alias
+source /etc/profile.d/rvm.sh
