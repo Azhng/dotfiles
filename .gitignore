@@ -17,3 +17,4 @@
 /.local/share/*
 !/.local/share/zsh_completion.d
 !/.latexmkrc
+!README.md
