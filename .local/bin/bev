@@ -44,3 +44,25 @@ bopenpr()
     return 1
   fi
 }
+
+brun()
+{
+  originalDir=$(pwd)
+  repoDir=$(pwd)
+  while :; do
+    if [[ $(pwd) == "/" ]]; then
+      echo "not in a bev enabled dir"
+      cd $originalDir
+      return 1
+    fi
+    if [[ -f $(pwd)/bev.yml ]]; then
+      repoDir=$(pwd)
+      break
+    else
+      cd ..
+    fi
+  done
+  echo "found bev.yml in $repoDir"
+  cd $originalDir
+  $HOME/.local/bin/brun.rb $repoDir/bev.yml
+}
