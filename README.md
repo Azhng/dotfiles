@@ -16,14 +16,14 @@ git pull origin master
 
 ## Bev
 
-`bev` provides few useful commands that increase my productivity. `bev` assumes all git source directory locate at `$HOME/src/github.com/`. All `bev` commands prefixes with `b-<cmd>`.
+`bev` provides few useful commands that increase my productivity. `bev` assumes all git source directory locate at `$HOME/src/github.com/`.
 
 
-### bcd
+### bev cd (alias to bcd)
 
 `cd` into a project locate in `$HOME/src/github.com`, also supports zsh-autosuggest prompt. 
 
-### bclone
+### bev clone (alias to bclone)
 
 `git clone` a repository from github into `$HOME/src/github.com/` and `cd` into the project directory. It reads from `.gitconfig` for username for github. 
 
@@ -39,7 +39,7 @@ Cloning public repo of other users:
 bclone <git-username>/<repo-name>
 ```
 
-### bopenpr
+### bev openpr (alias to bopenpr)
 
 Open github PRs if opened inside a git directory if the current branch is not master branch.
 
@@ -47,7 +47,7 @@ Open github PRs if opened inside a git directory if the current branch is not ma
 bopenpr
 ```
 
-### brun
+### bev run (alias to brun)
 
 At the root of the project create `bev.yml` file, currently only `run` command is supported.
 

@@ -66,3 +66,25 @@ brun()
   cd $originalDir
   $HOME/.local/bin/brun.rb $repoDir/bev.yml
 }
+
+bev()
+{
+  case $1 in
+  cd)
+    bcd $2
+  ;;
+  clone)
+    bclone $2
+  ;;
+  openpr)
+    bopenpr $2
+  ;;
+  run)
+    brun $2
+  ;;
+  *)
+    echo "not yet implemented"
+    return 1
+  ;;
+  esac
+}
