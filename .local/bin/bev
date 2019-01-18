@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+
 bcd()
 {
   cd $HOME/src/github.com/$1
@@ -43,4 +44,26 @@ bopenpr()
     echo "cannot open pr since current directory is not a git repo"
     return 1
   fi
+}
+
+brun()
+{
+  originalDir=$(pwd)
+  repoDir=$(pwd)
+  while :; do
+    if [[ $(pwd) == "/" ]]; then
+      echo "not in a bev enabled dir"
+      cd $originalDir
+      return 1
+    fi
+    if [[ -f $(pwd)/bev.yml ]]; then
+      repoDir=$(pwd)
+      break
+    else
+      cd ..
+    fi
+  done
+  echo "found bev.yml in $repoDir"
+  echo "Not yet implemented"
+  return 1
 }
