@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 bcd()
 {
   cd $HOME/src/github.com/$1
@@ -64,6 +63,6 @@ brun()
     fi
   done
   echo "found bev.yml in $repoDir"
-  echo "Not yet implemented"
-  return 1
+  cd $originalDir
+  $HOME/.local/bin/brun.rb $repoDir/bev.yml
 }
