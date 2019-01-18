@@ -1,7 +1,7 @@
 export PATH=/opt/mattermost:$HOME/.cargo/bin:$HOME/.gvm/gos/go1.11.4/bin:$HOME/.local/bin:$PATH
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
-source $HOME/.local/bin/bev
+source $HOME/.local/bin/bev.sh
 
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 [[ -e "/usr/bin/xdotool" ]] && export WINDOWID=$(xdotool getwindowfocus)
