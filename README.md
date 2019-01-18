@@ -47,4 +47,21 @@ Open github PRs if opened inside a git directory if the current branch is not ma
 bopenpr
 ```
 
+### brun
+
+At the root of the project create `bev.yml` file, currently only `run` command is supported.
+
+Example `bev.yml`: it compiles latex to pdf based on name of the subdirectory: 
+
+``` yaml
+commands:
+  run:
+    run:  latexmk -pdf -pvc $(pwd | xargs basename).tex
+    desc: compiling latex file to pdf on change
+```
+
+Then you can just run `brun` anywhere inside the root directory where `bev.yml` is located.
+
+
+
 
