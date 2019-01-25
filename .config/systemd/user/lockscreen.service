@@ -1,0 +1,12 @@
+[Unit]
+Description=User suspend actions
+Before=sleep.target
+
+[Service]
+User=az
+Type=simple
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/i3lock -n
+
+[Install]
+WantedBy=sleep.target
