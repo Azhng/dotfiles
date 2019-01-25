@@ -3,6 +3,7 @@
 !/.config
 /.config/*
 !/.config/nvim
+!/.config/i3
 !/.zshrc
 !/.zsh_env
 !/.zsh_alias
