@@ -1,16 +1,20 @@
 #!/usr/bin/env bash
 
+# update apt list
+sudo apt-get update
+
 echo "Setting up source code directory at: "
 mkdir -p $HOME/src/github.com/
 
 echo 'Setting up vim:'
-pip3 install --user neovim
 git clone https://github.com/neovim/neovim/ $HOME/src/github.com/neovim
+sudo apt-get install -y libncurses-dev libtermkey-dev libvterm-dev gperf libunibilium-dev libtool libtool-bin ninja-build
 cd $HOME/src/github.com/neovim
 git checkout v0.3.2
 make MAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/bin"
 ln -s $HOME/src/github.com/neovim/build/bin/nvim $HOME/.local/bin
 ln -s $HOME/src/github.com/neovim/runtime $HOME/.local/share/nvim/runtime
+pip3 install --user neovim
 git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 nvim -c PluginInstall -c quitall
 cd $HOME/.vim/bundle/YouCompleteMe
