@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+read var1 var2 < <(acpi -b | grep -o '[0-9]*%' | cut -d'%' -f1 | xargs echo)
+echo $((($var1 + $var2) / 2))

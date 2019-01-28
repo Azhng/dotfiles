@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+
+muted=$(pactl list sinks | grep Mute | cut -d' ' -f2)
+
+if [[ $muted = "yes" ]]; then
+  echo "Muted"
+else
+  pactl list sinks | grep 'Volume: front' | cut -d ' ' -f6
+fi
+
+
