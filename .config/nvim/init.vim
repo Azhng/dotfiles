@@ -84,6 +84,7 @@ let g:gitgutter_sign_modified = 'yy'
 let g:gitgutter_sign_removed = 'zz'
 let g:gitgutter_sign_removed_first_line = '^^'
 let g:gitgutter_sign_modified_removed = 'ww'
+let g:gitgutter_enabled = 0
 
 let python_highlight_all=1
 syntax on
@@ -100,3 +101,5 @@ call togglebg#map("<F5>")
 let NERDTreeIgnore=['\.pyc$', '\~$']
 let $VIMRUNTIME='$HOME/.local/share/nvim/runtime'
 
+" set nvim to use system clipboard
+set clipboard+=unnamedplus
