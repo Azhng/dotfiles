@@ -4,3 +4,4 @@ alias cat=bat
 alias mk=make
 alias cdw="cd $HOME/src/github.com/"
 alias sctl=systemctl
+[[ $(uname) = "Linux" ]]; alias open=xdg-open
