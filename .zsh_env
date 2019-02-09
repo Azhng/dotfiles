@@ -6,6 +6,8 @@ source $HOME/.local/bin/bev.sh
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 [[ -e "/usr/bin/xdotool" ]] && export WINDOWID=$(xdotool getwindowfocus)
 
+# Add rustup completion
+fpath=($HOME/.zfunc $fpath)
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
@@ -17,3 +19,6 @@ export FANTASTIC_ROOT=$HOME/src/github.com/fantastic-kit
 fpath=($FANTASTIC_ROOT/autocompletion $fpath)
 cd $FANTASTIC_ROOT && source ./bin/load-dev && load-dev
 cd $HOME
+
+# reload shell completion function
+compinit 
