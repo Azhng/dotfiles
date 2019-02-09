@@ -15,6 +15,5 @@ source $HOME/.rvm/scripts/rvm
 # TODO: remove this when fantastic-kit installation story is done
 export FANTASTIC_ROOT=$HOME/src/github.com/fantastic-kit
 fpath=($FANTASTIC_ROOT/autocompletion $fpath)
-pushd $HOME/src/github.com/fantastic-kit > /dev/null
-source ./bin/load-dev && load-dev
-popd > /dev/null
+cd $FANTASTIC_ROOT && source ./bin/load-dev && load-dev
+cd $HOME
