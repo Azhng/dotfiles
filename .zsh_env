@@ -9,9 +9,12 @@ source $HOME/.local/bin/bev.sh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-source /usr/share/rvm/scripts/rvm
+source $HOME/.rvm/scripts/rvm
 
 # use fantastic-kit dev version without installing it
+# TODO: remove this when fantastic-kit installation story is done
+export FANTASTIC_ROOT=$HOME/src/github.com/fantastic-kit
+fpath=($FANTASTIC_ROOT/autocompletion $fpath)
 pushd $HOME/src/github.com/fantastic-kit > /dev/null
 source ./bin/load-dev && load-dev
 popd > /dev/null
