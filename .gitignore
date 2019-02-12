@@ -5,6 +5,7 @@
 !/.config/nvim
 !/.config/i3
 !/.config/systemd
+!/.conkyrc
 !/.zshrc
 !/.zsh_env
 !/.zsh_alias
