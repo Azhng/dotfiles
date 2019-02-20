@@ -24,6 +24,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'iamcco/markdown-preview.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'brgmnn/vim-opencl'
+Plugin 'jez/vim-better-sml'
 Bundle 'Valloric/YouCompleteMe'
 
 call vundle#end()
