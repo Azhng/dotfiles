@@ -67,6 +67,10 @@ au BufNewFile,BufRead *.py
 autocmd FileType c,cpp,cc,h,hpp setlocal equalprg=clang-format
 autocmd BufWritePre,BufRead *.c,*.cpp,*.cc,*.h,*.hpp :normal gg=G''
 
+" set SML keybinding
+autocmd BufRead *.sml :SMLReplStart
+autocmd FileType sml nnoremap <buffer> <C-j> :SMLReplBuild<CR>
+
 au BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2 |
     \ set softtabstop=2 |
