@@ -16,6 +16,7 @@
 !/.local/bin
 /.local/bin/nvim
 /.local/bin/bat
+/.local/bin/hdevtools
 !/.local/share/
 /.local/share/*
 !/.local/share/zsh_completion.d

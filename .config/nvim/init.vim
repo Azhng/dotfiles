@@ -25,6 +25,9 @@ Plugin 'iamcco/markdown-preview.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'brgmnn/vim-opencl'
 Plugin 'jez/vim-better-sml'
+Plugin 'neovimhaskell/haskell-vim'
+Plugin 'bitc/vim-hdevtools'
+
 Bundle 'Valloric/YouCompleteMe'
 
 call vundle#end()
@@ -110,3 +113,8 @@ let $VIMRUNTIME='$HOME/.local/share/nvim/runtime'
 
 " set nvim to use system clipboard
 set clipboard+=unnamedplus
+
+" vim-hdevtools
+au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
+au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsInfo<CR>
+au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsClear<CR>
