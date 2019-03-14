@@ -27,6 +27,7 @@ Plugin 'brgmnn/vim-opencl'
 Plugin 'jez/vim-better-sml'
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'bitc/vim-hdevtools'
+Plugin 'jsfaint/gen_tags.vim'
 
 Bundle 'Valloric/YouCompleteMe'
 
