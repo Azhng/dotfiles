@@ -25,6 +25,10 @@ Plugin 'iamcco/markdown-preview.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'brgmnn/vim-opencl'
 Plugin 'jez/vim-better-sml'
+Plugin 'neovimhaskell/haskell-vim'
+Plugin 'bitc/vim-hdevtools'
+Plugin 'jsfaint/gen_tags.vim'
+
 Bundle 'Valloric/YouCompleteMe'
 
 call vundle#end()
@@ -110,3 +114,17 @@ let $VIMRUNTIME='$HOME/.local/share/nvim/runtime'
 
 " set nvim to use system clipboard
 set clipboard+=unnamedplus
+
+" vim-hdevtools
+au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
+au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsInfo<CR>
+au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsClear<CR>
+
+" vim relative line number auto toggle
+set number relativenumber
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
