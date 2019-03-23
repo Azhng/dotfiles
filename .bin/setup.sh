@@ -20,6 +20,9 @@ nvim -c PluginInstall -c quitall
 cd $HOME/.vim/bundle/YouCompleteMe
 python3 install.py --clang-completer --java-completer --go-completer --rust-completer
 
+echo 'Setting up gvm:'
+bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+
 echo "Setting up bat:"
 mkdir -p $HOME/.local/tmp
 cd $HOME/.local/tmp

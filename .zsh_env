@@ -13,6 +13,9 @@ fpath=($HOME/.zfunc $fpath)
 export PATH="$PATH:$HOME/.rvm/bin"
 source $HOME/.rvm/scripts/rvm
 
+# Add GVM to PATH
+source $HOME/.gvm/scripts/gvm
+
 # use fantastic-kit dev version without installing it
 # TODO: remove this when fantastic-kit installation story is done
 export FANTASTIC_ROOT=$HOME/src/github.com/fantastic-kit
