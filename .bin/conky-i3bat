@@ -7,4 +7,4 @@ if [ $output = "No support for device type: power_supply" ]; then
 fi
 
 read var1 var2 < <(acpi -b | grep -o '[0-9]*%' | cut -d'%' -f1 | xargs echo >> /dev/null)
-echo $((($var1 + $var2) / 2))
+echo "$((($var1 + $var2) / 2))%"

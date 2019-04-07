@@ -8,4 +8,4 @@ if [ $output = "No outputs have backlight property" ]; then
   exit 0
 fi
 
-xbacklight | cut -d'.' -f1
+echo "$(xbacklight | cut -d'.' -f1)%"
