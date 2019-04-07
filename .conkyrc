@@ -39,7 +39,7 @@ conky.text = [[
     { "full_text": "RAM ${memperc}%" , "color": ${if_match ${memperc}<90}"\#ffffff"${else}"\#ff0000"${endif} },
     { "full_text": "Battery: ${execpi 5 $HOME/.bin/conky-i3bat}%", "color": "\#ffffff" },
     { "full_text": "Volume: ${execpi 0.5 $HOME/.bin/conky-i3vol}"  },
-    { "full_text": "Brightness: ${execpi 0.5 xbacklight | cut -d'.' -f1}%"},
+    { "full_text": "Brightness: ${execpi 0.5 $HOME/.bin/conky-i3brightness}%"},
     { "full_text": "${execpi 1 date}"}
 ],
 ]];

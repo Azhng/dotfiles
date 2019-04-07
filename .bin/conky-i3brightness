@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+
+output=$(xbacklight 2>&1)
+rc=$?
+
+if [ $output = "No outputs have backlight property" ]; then
+  echo "N/A"
+  exit 0
+fi
+
+xbacklight | cut -d'.' -f1
