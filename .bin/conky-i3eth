@@ -8,7 +8,12 @@ if [ -z $ethname ]; then
 else
   # TODO: figure out color support
   #echo -e "\e[94m$(ip -d a show $ethname | grep inet6 | head -n1 | cut -d' ' -f6)\e[39m"
-  echo -e "$(ip -d a show $ethname | grep inet6 | head -n1 | cut -d' ' -f6)"
+  addr=$(ip -d a show $ethname | grep inet | head -n1 | cut -d' ' -f6)
+  if [ -z $addr ]; then
+    echo "N/A"
+  else
+    echo $addr
+  fi
 fi
 
 
