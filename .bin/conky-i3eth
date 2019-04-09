@@ -1,0 +1,14 @@
+#!/usr/bin/env zsh
+
+ethname=$(ip a | grep -o "enp[0-9][a-z][0-9]*" | head -n 1)
+
+if [ -z $ethname ]; then
+  echo "N/A"
+  exit 0
+else
+  # TODO: figure out color support
+  #echo -e "\e[94m$(ip -d a show $ethname | grep inet6 | head -n1 | cut -d' ' -f6)\e[39m"
+  echo -e "$(ip -d a show $ethname | grep inet6 | head -n1 | cut -d' ' -f6)"
+fi
+
+
