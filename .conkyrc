@@ -41,6 +41,7 @@ conky.text = [[
     { "full_text": "Volume: ${execpi 0.5 $HOME/.bin/conky-i3vol}"  },
     { "full_text": "Brightness: ${execpi 0.5 $HOME/.bin/conky-i3brightness}"},
     { "full_text": "Eth: ${execpi 2 $HOME/.bin/conky-i3eth}" },
+    { "full_text": "Wan: ${execpi 2 $HOME/.bin/conky-i3wan}" },
     { "full_text": "${execpi 1 date}"}
 ],
 ]];

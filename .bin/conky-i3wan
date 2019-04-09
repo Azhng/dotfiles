@@ -1,0 +1,19 @@
+#!/usr/bin/env zsh
+
+ethname=$(ip a | grep -o "wlp[0-9][a-z][0-9]*" | head -n 1)
+
+if [ -z $ethname ]; then
+  echo "N/A"
+  exit 0
+else
+  # TODO: figure out color support
+  #echo -e "\e[94m$(ip -d a show $ethname | grep inet6 | head -n1 | cut -d' ' -f6)\e[39m"
+  addr=$(nmcli device wifi list | grep "\*" | cut -d' ' -f8)
+  if [ -z $addr ]; then
+    echo "N/A"
+  else
+    echo $addr
+  fi
+fi
+
+
