@@ -8,11 +8,12 @@ if [ -z $ethname ]; then
 else
   # TODO: figure out color support
   #echo -e "\e[94m$(ip -d a show $ethname | grep inet6 | head -n1 | cut -d' ' -f6)\e[39m"
-  addr=$(nmcli device wifi list | grep "\*" | cut -d' ' -f8)
-  if [ -z $addr ]; then
+  ssid=$(nmcli device wifi list | grep "\*" | cut -d' ' -f8)
+  addr=$(ip -d a show $ethname | grep inet | head -n1 | cut -d' ' -f6)
+  if [ -z $ssid ]; then
     echo "N/A"
   else
-    echo $addr
+    echo "$ssid - $addr"
   fi
 fi
 
