@@ -2,7 +2,7 @@
 
 output=$(acpi -b 2>&1)
 if [ $output = "No support for device type: power_supply" ]; then
-  echo "N/A"
+  echo "\#444444"
   exit 0
 fi
 

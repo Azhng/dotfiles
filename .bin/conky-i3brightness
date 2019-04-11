@@ -1,13 +1,13 @@
 #!/usr/bin/env zsh
 
 if [[ -z $(command -v xbacklight) ]]; then
-  echo "N/A2"
+  echo "N/A"
 else
   output=$(xbacklight 2>&1)
   rc=$?
   
   if [ $output = "No outputs have backlight property" ]; then
-    echo "N/A1"
+    echo "N/A"
     exit 0
   fi
   
