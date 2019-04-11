@@ -3,13 +3,13 @@
 ethname=$(ip a | grep -o "enp.*" | head -n 1)
 
 if [ -z $ethname ]; then
-  echo "no interface"
+  echo "\#ff0000"
 else
   addr=$(ip -d a show $ethname | grep inet | head -n1 | cut -d' ' -f6)
   if [ -z $addr ]; then
-    echo "N/A"
+    echo "\#ff0000"
   else
-    echo $addr
+    echo "\#00ff00"
   fi
 fi
 

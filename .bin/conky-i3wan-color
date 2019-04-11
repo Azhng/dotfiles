@@ -1,0 +1,17 @@
+#!/usr/bin/env zsh
+
+ethname=$(ip a | grep -o "wlp[0-9][a-z][0-9]*" | head -n 1)
+
+if [ -z $ethname ]; then
+  echo "\#ff0000"
+else
+  ssid=$(nmcli device wifi list | grep "\*" | cut -d' ' -f8)
+  addr=$(ip -d a show $ethname | grep inet | head -n1 | cut -d' ' -f6)
+  if [ -z $ssid ]; then
+    echo "\#ff0000"
+  else
+    echo "\#00ff00"
+  fi
+fi
+
+
