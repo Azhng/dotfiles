@@ -1,0 +1,18 @@
+#!/usr/bin/env zsh
+
+output=$(acpi -b 2>&1)
+if [ $output = "No support for device type: power_supply" ]; then
+  echo "N/A"
+  exit 0
+fi
+
+read var1 var2 < <(acpi -b | grep -o '[0-9]*%' | cut -d'%' -f1 | xargs echo)
+perc=$(echo "$((($var1 + $var2) / 2))" | bc)
+
+if (( $perc >= 60 )); then
+  echo "\#00ff00"
+elif (( $perc >= 30 )); then
+  echo "\#ffff00"
+else
+  echo "\#ff0000"
+fi

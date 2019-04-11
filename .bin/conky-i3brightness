@@ -1,15 +1,15 @@
 #!/usr/bin/env zsh
 
-if [[ -z xbacklight ]]; then
+if [[ -z $(command -v xbacklight) ]]; then
+  echo "N/A2"
+else
   output=$(xbacklight 2>&1)
   rc=$?
   
   if [ $output = "No outputs have backlight property" ]; then
-    echo "N/A"
+    echo "N/A1"
     exit 0
   fi
   
   echo "$(xbacklight | cut -d'.' -f1)%"
-else
-  echo "N/A"
 fi
