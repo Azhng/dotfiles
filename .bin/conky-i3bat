@@ -7,4 +7,11 @@ if [ $output = "No support for device type: power_supply" ]; then
 fi
 
 read var1 var2 < <(acpi -b | grep -o '[0-9]*%' | cut -d'%' -f1 | xargs echo)
-echo "$((($var1 + $var2) / 2))%"
+perc=$((($var1 + $var2) / 2))%
+
+if [[ -z $(acpi -b | grep Charging) ]]; then
+  echo "Battery: $perc"
+else
+  echo "Charging: $perc"
+fi
+
