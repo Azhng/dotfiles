@@ -6,7 +6,7 @@ Before=sleep.target
 User=az
 Type=simple
 Environment=DISPLAY=:0
-ExecStart=/usr/bin/i3lock -n
+ExecStart=/usr/bin/i3lock -c 000000 -n
 
 [Install]
 WantedBy=sleep.target
