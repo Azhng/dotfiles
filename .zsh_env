@@ -1,4 +1,4 @@
-export PATH=/opt/ghc/bin:/opt/mattermost:$HOME/.cargo/bin:$HOME/.gvm/gos/go1.11.4/bin:$HOME/.local/bin:$PATH
+export PATH=/opt/ghc/bin:/opt/mattermost:$HOME/.cargo/bin:$HOME/.local/bin:$PATH
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 source $HOME/.local/bin/bev.sh
@@ -12,9 +12,6 @@ fpath=($HOME/.zfunc $fpath)
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 source $HOME/.rvm/scripts/rvm
-
-# Add GVM to PATH
-source $HOME/.gvm/scripts/gvm
 
 # use fantastic-kit dev version without installing it
 # TODO: remove this when fantastic-kit installation story is done
