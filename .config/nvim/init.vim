@@ -28,6 +28,8 @@ Plugin 'jez/vim-better-sml'
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'bitc/vim-hdevtools'
 Plugin 'jsfaint/gen_tags.vim'
+Plugin 'itchyny/lightline.vim'
+Plugin 'tpope/vim-surround'
 
 Bundle 'Valloric/YouCompleteMe'
 
