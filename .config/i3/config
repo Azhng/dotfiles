@@ -190,3 +190,5 @@ bindsym $mod+Delete mode "$mode_system"
 # titlebar
 for_window [class="^.*"] border pixel 3
 new_window 1pixel
+
+exec --no-startup-id redshift-gtk
