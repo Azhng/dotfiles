@@ -1,6 +1,14 @@
 set nocompatible 
-filetype off
+filetype off "NeoBundle Scripts-----------------------------
+if &compatible
+set nocompatible               " Be iMproved
+endif
 
+" Required:
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+
+" Required:
+filetype plugin indent on
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -36,29 +44,29 @@ Bundle 'Valloric/YouCompleteMe'
 call vundle#end()
 filetype plugin indent on
 
+
 let g:SimpylFold_docstring_preview=1
 
 set nu
+
 set splitbelow
 set splitright
-set foldmethod=indent
-set foldlevel=99
-set clipboard=unnamed
-set mouse=a
-set nomodeline
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-nmap <silent> <C-N> :NERDTreeToggle<CR>
-
-nnoremap <space> za
-
 inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
 inoremap {{     {
 inoremap {}     {}
+
+set foldmethod=indent
+set foldlevel=99
+
+nnoremap <space> za
+nnoremap <localleader>t :EnType<CR>
+au FileType scala nnoremap <localleader>df :EnDeclaration<CR>
 
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
@@ -73,60 +81,54 @@ au BufNewFile,BufRead *.py
 autocmd FileType c,cpp,cc,h,hpp setlocal equalprg=clang-format
 autocmd BufWritePre,BufRead *.c,*.cpp,*.cc,*.h,*.hpp :normal gg=G''
 
-" set SML keybinding
-autocmd BufRead *.sml :SMLReplStart
-autocmd FileType sml nnoremap <buffer> <C-j> :SMLReplBuild<CR>
+autocmd BufWritePost *.scala silent :EnTypeCheck
 
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set shiftwidth=2
+au FileType js,html,css 
+      \ setlocal tabstop=2 softtabstop=2 shiftwidth=2
+
+set encoding=utf-8
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+map <C-n> :NERDTreeToggle<CR>
+map <C-f> :YcmCompleter GoTo<CR>
 
 set encoding=utf-8
 set list
 set listchars=eol:$,tab:>-,trail:~,space:~,extends:>,precedes:<
 set tabstop=2 shiftwidth=2 expandtab
 
-let g:ycm_autoclose_preview_window_after_completion=0
-let g:ycm_global_ycm_extra_conf = '$HOME/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nmap <C-b><C-b> :GitGutterToggle<CR>
-let g:gitgutter_highlight_lines = 1
-let g:gitgutter_sign_added = 'xx'
-let g:gitgutter_sign_modified = 'yy'
-let g:gitgutter_sign_removed = 'zz'
-let g:gitgutter_sign_removed_first_line = '^^'
-let g:gitgutter_sign_modified_removed = 'ww'
-let g:gitgutter_enabled = 0
+" GLSL config
+autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
 
+" ycm config
+let g:ycm_path_to_python_interpreter = 'C:\Python27\python.exe'
+let g:ycm_global_ycm_extra_conf = 'C:\Users\Archer Zhang\.vim\bundle\YouCompleteMe\third_party\ycmd/.ycm_extra_conf.py'
+let g:ycm_autoclose_preview_window_after_completion=1
 let python_highlight_all=1
 syntax on
 
 if has('gui_running')
-  set background=dark
-  colorscheme solarized
+set t_Co=256
+set background=dark
+colorscheme solarized
 else
-  colorscheme zenburn
+colorscheme zenburn
 endif
+
+" ctrlp config
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = 'build'
 
 call togglebg#map("<F5>")
 
 let NERDTreeIgnore=['\.pyc$', '\~$']
-let $VIMRUNTIME='$HOME/.local/share/nvim/runtime'
 
-" set nvim to use system clipboard
-set clipboard+=unnamedplus
+set clipboard=unnamed
 
-" vim-hdevtools
-au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
-au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsInfo<CR>
-au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsClear<CR>
+if exists('+termguicolors')
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
+endif
 
-" vim relative line number auto toggle
-set number relativenumber
-
-augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-augroup END
