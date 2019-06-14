@@ -55,6 +55,9 @@ nmap <silent> <C-N> :NERDTreeToggle<CR>
 
 nnoremap <space> za
 
+" duplicate current buffer to new tab
+nnoremap f :tab split \| YcmCompleter GoToDefinition<CR>
+
 inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
 inoremap {{     {
