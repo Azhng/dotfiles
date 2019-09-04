@@ -30,6 +30,7 @@ Plugin 'bitc/vim-hdevtools'
 Plugin 'jsfaint/gen_tags.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-surround'
+Plugin 'JamshedVesuna/vim-markdown-preview'
 
 Bundle 'Valloric/YouCompleteMe'
 
