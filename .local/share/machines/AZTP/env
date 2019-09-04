@@ -1,2 +1,1 @@
-export PATH=$HOME/.local/share/machines/AZTP/spark/bin:$PATH
-echo "vola"
+export PATH=$HOME/.local/share/machines/AZTP/hadoop/bin:$HOME/.local/share/machines/AZTP/spark/bin:$PATH
