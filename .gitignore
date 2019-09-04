@@ -20,5 +20,6 @@
 !/.local/share/
 /.local/share/*
 !/.local/share/zsh_completion.d
+!/.local/share/machines
 !/.latexmkrc
 !README.md

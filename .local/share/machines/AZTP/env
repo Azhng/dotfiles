@@ -1,0 +1,2 @@
+export PATH=$HOME/.local/share/machines/AZTP/spark/bin:$PATH
+echo "vola"

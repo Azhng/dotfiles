@@ -3,6 +3,8 @@ export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 source $HOME/.local/bin/bev.sh
 
+[[ -d "$HOME/.local/share/machines/$(hostname)" ]] && source "$HOME/.local/share/machines/AZTP/env"
+
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 [[ -e "/usr/bin/xdotool" ]] && export WINDOWID=$(xdotool getwindowfocus)
 
