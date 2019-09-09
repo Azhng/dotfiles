@@ -1,5 +1,6 @@
 [user]
 	email = archer.xn@gmail.com
 	name = Azhng
+	signingkey = 26064B72C901E7A0
 [core]
 	editor = vim
