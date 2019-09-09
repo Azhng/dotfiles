@@ -40,6 +40,9 @@ echo 'Settup up bev:'
 mkdir -p $HOME/.oh-my-zsh/completions/
 ln -s $HOME/.local/share/zsh_completion.d/_bcd $HOME/.oh-my-zsh/completions/_bcd
 
+echo 'Setting up git:'
+cp $HOME/.local/templates/gitconfig $HOME/.gitconfig
+
 rm -rf $HOME/.local/tmp
 
 echo 'Done'

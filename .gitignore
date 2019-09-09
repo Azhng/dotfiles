@@ -20,6 +20,7 @@
 /.local/share/*
 !/.local/share/zsh_completion.d
 !/.local/share/machines
+!/.local/templates
 !/.latexmkrc
 !README.md
 !/.Xmodmap
