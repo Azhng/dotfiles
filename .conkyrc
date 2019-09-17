@@ -42,6 +42,6 @@ conky.text = [[
     { "full_text": "Brightness: ${execpi 0.5 $HOME/.bin/conky-i3brightness}"},
     { "full_text": "Eth: ${execpi 2 $HOME/.bin/conky-i3eth}", "color": "${execpi 2 $HOME/.bin/conky-i3eth-color}" },
     { "full_text": "WAN: ${execpi 2 $HOME/.bin/conky-i3wan}", "color": "${execpi 2 $HOME/.bin/conky-i3wan-color}" },
-    { "full_text": "${execpi 1 date}"}
+    { "full_text": "${execpi 1 date +'%a %b %e %T %Z'}"}
 ],
 ]];
