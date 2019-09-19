@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-ethname=$(ip a | grep -o "enp.*" | head -n 1)
+ethname=$(ip a | grep -o "enp.*" | head -n 1 | cut -d':' -f1)
 
 if [ -z $ethname ]; then
   echo "no interface"
