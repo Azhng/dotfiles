@@ -116,6 +116,7 @@ endif
 " ctrlp config
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = 'build'
+let g:ctrlp_root_markers = ['.ctrlp', 'Makefile', 'CMakeLists.txt']
 
 call togglebg#map("<F5>")
 
