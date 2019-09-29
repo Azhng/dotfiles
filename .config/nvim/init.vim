@@ -31,6 +31,7 @@ Plugin 'jsfaint/gen_tags.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'JamshedVesuna/vim-markdown-preview'
+Plugin 'rhysd/vim-clang-format'
 
 Bundle 'Valloric/YouCompleteMe'
 
@@ -72,10 +73,6 @@ au BufNewFile,BufRead *.py
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix
-
-" set C/C++ autoformatter to clang-format
-autocmd FileType c,cpp,cc,h,hpp setlocal equalprg=clang-format
-autocmd BufWritePre,BufRead *.c,*.cpp,*.cc,*.h,*.hpp :normal gg=G''
 
 " set SML keybinding
 autocmd BufRead *.sml :SMLReplStart
