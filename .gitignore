@@ -6,9 +6,7 @@
 !/.config/i3
 !/.config/systemd
 !/.conkyrc
-!/.zshrc
-!/.zsh_env
-!/.zsh_alias
+!/.ideavimrc
 !/.gitignore
 !/.local
 /.local/*
@@ -24,3 +22,6 @@
 !/.latexmkrc
 !README.md
 !/.Xmodmap
+!/.zshrc
+!/.zsh_env
+!/.zsh_alias
