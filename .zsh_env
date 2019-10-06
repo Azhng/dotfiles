@@ -10,10 +10,6 @@ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 # Add rustup completion
 fpath=($HOME/.zfunc $fpath)
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-source $HOME/.rvm/scripts/rvm
-
 # use fantastic-kit dev version without installing it
 # TODO: remove this when fantastic-kit installation story is done
 export FANTASTIC_ROOT=$HOME/src/github.com/fantastic-kit
