@@ -32,6 +32,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'rhysd/vim-clang-format'
+Plugin 'tbastos/vim-lua'
 
 Bundle 'Valloric/YouCompleteMe'
 
