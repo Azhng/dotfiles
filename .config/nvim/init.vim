@@ -33,6 +33,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'tbastos/vim-lua'
+Plugin 'tikhomirov/vim-glsl'
 
 Bundle 'Valloric/YouCompleteMe'
 
@@ -133,6 +134,9 @@ set clipboard+=unnamedplus
 au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
 au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsInfo<CR>
 au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsClear<CR>
+
+" glsl
+autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
 
 " ESC
 imap jj <ESC>
