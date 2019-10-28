@@ -138,5 +138,8 @@ au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsClear<CR>
 " glsl
 autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
 
+" clang-format
+let g:clang_format#auto_format = 1
+
 " ESC
 imap jj <ESC>
