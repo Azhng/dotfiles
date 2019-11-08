@@ -141,5 +141,9 @@ autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
 " clang-format
 let g:clang_format#auto_format = 1
 
+" gen_tags
+let g:gen_tags#blacklist = ['$HOME']
+
+
 " ESC
 imap jj <ESC>
