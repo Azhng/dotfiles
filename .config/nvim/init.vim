@@ -50,6 +50,7 @@ set foldlevel=99
 set clipboard=unnamed
 set mouse=a
 set nomodeline
+set visualbell
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
