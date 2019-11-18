@@ -11,10 +11,7 @@
 !/.local
 /.local/*
 !/.local/bin
-/.local/bin/nvim
-/.local/bin/bat
-/.local/bin/tmux
-/.local/bin/event_rpcgen.py
+/.local/bin/*
 !/.local/share/
 /.local/share/*
 !/.local/share/zsh_completion.d
