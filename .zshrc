@@ -1,4 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
+unsetopt beep
 
 ZSH_THEME="agnoster"
 
