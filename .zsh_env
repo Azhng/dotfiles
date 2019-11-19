@@ -15,8 +15,7 @@ fpath=($HOME/.zfunc $fpath)
 # TODO: remove this when fantastic-kit installation story is done
 export FANTASTIC_ROOT=$HOME/src/github.com/fantastic-kit
 fpath=($FANTASTIC_ROOT/autocompletion $fpath)
-export PATH=$HOME/src/github.com/fantastic-kit/bin:$PATH
-source $HOME/src/github.com/fantastic-kit/bin/fk.sh
-fpath=($HOME/src/github.com/fantastic-kit/autocompletion $fpath)
+export PATH=$FANTASTIC_ROOT/bin:$PATH
+source $FANTASTIC_ROOT/bin/fk.sh
 
 compinit
