@@ -3,7 +3,7 @@ unsetopt beep
 
 ZSH_THEME="agnoster"
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting command-time)
 DEFAULT_USER=$USER
 
 source $ZSH/oh-my-zsh.sh

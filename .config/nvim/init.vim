@@ -34,6 +34,11 @@ Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'tbastos/vim-lua'
 Plugin 'tikhomirov/vim-glsl'
+Plugin 'derekwyatt/vim-scala'
+
+" Since Vundle cannot specify plugin branch
+" TODO: switch to vim-plug or other plugin manager
+Plugin 'neoclide/coc.nvim', {'pinned': 1}
 
 Bundle 'Valloric/YouCompleteMe'
 
@@ -145,6 +150,16 @@ let g:clang_format#auto_format = 1
 " gen_tags
 let g:gen_tags#blacklist = ['$HOME']
 
+" disable ycm for scala and let metals/coc handle it
+let g:ycm_filetype_blacklist = { 'scala': 1 }
+
+" Coc triggers
+au FileType scala inoremap <silent><expr> <c-space> coc#refresh()
+au FileType scala nmap <silent> gd <Plug>(coc-definition)
+au FileType scala nmap <silent> gy <Plug>(coc-type-definition)
+au FileType scala nmap <silent> gi <Plug>(coc-implementation)
+au FileType scala nmap <silent> gr <Plug>(coc-references)))))
+au FileType scala autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " ESC
 imap jj <ESC>
