@@ -2,6 +2,7 @@
 !/.bin
 !/.config
 /.config/*
+!/.config/bat
 !/.config/nvim
 !/.config/i3
 !/.config/systemd
