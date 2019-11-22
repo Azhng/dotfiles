@@ -10,7 +10,7 @@ echo 'Setting up vim:'
 git clone https://github.com/neovim/neovim/ $HOME/src/github.com/neovim
 sudo apt-get install -y libncurses-dev libtermkey-dev libvterm-dev gperf libunibilium-dev libtool libtool-bin ninja-build
 cd $HOME/src/github.com/neovim
-git checkout v0.3.2
+git checkout v0.4.3
 make MAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/bin"
 ln -s $HOME/src/github.com/neovim/build/bin/nvim $HOME/.local/bin
 ln -s $HOME/src/github.com/neovim/runtime $HOME/.local/share/nvim/runtime
@@ -26,9 +26,9 @@ bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/bins
 echo "Setting up bat:"
 mkdir -p $HOME/.local/tmp
 cd $HOME/.local/tmp
-wget https://github.com/sharkdp/bat/releases/download/v0.9.0/bat-v0.9.0-x86_64-unknown-linux-musl.tar.gz
-tar xzf bat-v0.9.0-x86_64-unknown-linux-musl.tar.gz
-cp bat-v0.9.0-x86_64-unknown-linux-musl/bat $HOME/.local/bin
+wget https://github.com/sharkdp/bat/releases/download/v0.12.1/bat-v0.12.1-x86_64-unknown-linux-musl.tar.gz
+tar xzf bat-v0.12.1-x86_64-unknown-linux-musl.tar.gz
+cp bat-v0.12.1-x86_64-unknown-linux-musl/bat $HOME/.local/bin
 
 echo 'Setting up zsh:'
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
