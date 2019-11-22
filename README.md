@@ -4,6 +4,8 @@ This dotfile should be directly clone at `$HOME` directory. It uses git branches
 
 By default it install `neovim`, `bat`, `zsh` (and oh-my-zsh).
 
+No `sudo` privilege required. All dependencies will be manually managed and compiled from home directory.
+
 ## Installation
 
 ``` bash
