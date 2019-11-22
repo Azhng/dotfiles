@@ -110,6 +110,11 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/popstas/zsh-command-time.git ~/.oh-my-zsh/custom/plugins/command-time
 
+# TODO: migrate to curl install after fk stablize
+echo 'Installing fantastic-kit'
+cd $HOME/src/github.com
+git clone git@github.com:fantastic-kit/fantastic-kit.git
+
 rm -rf $HOME/.local/tmp
 
 echo 'Done'
