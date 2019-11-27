@@ -110,6 +110,17 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/popstas/zsh-command-time.git ~/.oh-my-zsh/custom/plugins/command-time
 
+echo 'Setting up ag:'
+cd $HOME/.local/tmp
+AG_VER="2.2.0"
+wget https://github.com/ggreer/the_silver_searcher/archive/$AG_VER.tar.gz
+tar xzf $AG_VER
+cd the_silver_searcher-$AG_VER
+./autoconf
+./configure --prefix=$HOME/.local
+make
+make install
+
 # TODO: migrate to curl install after fk stablize
 echo 'Installing fantastic-kit'
 cd $HOME/src/github.com
