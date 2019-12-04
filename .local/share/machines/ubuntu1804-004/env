@@ -1,0 +1,2 @@
+export PATH=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin:/u3/cs451/packages/spark/bin:/u3/cs451/packages/hadoop/bin:/u3/cs451/packages/maven/bin:/u3/cs451/packages/scala/bin:$PATH
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
