@@ -1,4 +1,4 @@
-alias vim='VIMRUNTIME="$HOME/.local/share/nvim/runtime" nvim'
+alias vim=nvim
 alias cat=bat
 alias mk=make
 alias sl=ls
