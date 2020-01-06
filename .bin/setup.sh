@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# install cmake/autoconf/wget
+
 echo "Setting up source code directory at: "
 mkdir -p $HOME/src/github.com/
 
@@ -68,6 +70,7 @@ cd unibilium-2.0.0
 make
 make install PREFIX=$HOME/.local
 
+# TODO: build from src
 echo 'Installing ninja'
 cd $HOME/.local/tmp
 wget https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja-linux.zip
@@ -96,6 +99,7 @@ export GOROOT_BOOTSTRAP=$GOROOT
 gvm install go1.13.4
 gvm use go1.13.4 --default
 
+# TODO: build from src
 echo "Setting up bat:"
 mkdir -p $HOME/.local/tmp
 cd $HOME/.local/tmp
