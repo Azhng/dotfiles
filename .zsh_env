@@ -18,3 +18,4 @@ export PATH=$FANTASTIC_ROOT/bin:$PATH
 source $FANTASTIC_ROOT/bin/fk.sh
 
 compinit
+export PATH="/usr/local/opt/go@1.12/bin:$PATH"
