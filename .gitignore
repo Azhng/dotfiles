@@ -4,6 +4,7 @@
 /.config/*
 !/.config/bat
 !/.config/nvim
+/.config/nvim/plugged
 !/.config/i3
 !/.config/systemd
 !/.conkyrc

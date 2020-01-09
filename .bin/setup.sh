@@ -8,6 +8,15 @@ mkdir -p $HOME/src/github.com/
 echo 'Setting up git:'
 cp $HOME/.local/templates/gitconfig $HOME/.gitconfig
 
+echo 'Setting up gvm:'
+bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+gvm install go1.4 -B
+gvm use go1.4
+export GOROOT_BOOTSTRAP=$GOROOT
+gvm install go1.13.4
+gvm use go1.13.4 --default
+GO111MODULE=on go get golang.org/x/tools/gopls@latest
+
 echo 'Setting up libtool'
 wget http://gnu.freemirror.org/gnu/libtool/libtool-2.4.6.tar.xz
 tar xf libtool-2.4.6.tar.xz
@@ -86,18 +95,13 @@ make install # TO BE VERIFIED
 #ln -s $HOME/src/github.com/neovim/build/bin/nvim $HOME/.local/bin
 #ln -s $HOME/src/github.com/neovim/runtime $HOME/.local/share/nvim/runtime
 pip3 install --user neovim # TODO: migrate to per-user python
-git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim # TODO: migrate to vim-plug
-nvim -c PluginInstall -c quitall # TODO: handle coc
-cd $HOME/.vim/bundle/YouCompleteMe
-python3 install.py --clang-completer --go-completer
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \ # installing vim-plug
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+nvim -c PlugInstall -c quitall
 
-echo 'Setting up gvm:'
-bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-gvm install go1.4 -B
-gvm use go1.4
-export GOROOT_BOOTSTRAP=$GOROOT
-gvm install go1.13.4
-gvm use go1.13.4 --default
+# Clangd
+# Run this
+# sudo apt install clang-tools-8 # too much work building one myself
 
 # TODO: build from src
 echo "Setting up bat:"

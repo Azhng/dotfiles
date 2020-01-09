@@ -1,48 +1,48 @@
 set nocompatible 
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin()
 
-Plugin 'gmarik/Vundle.vim'
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'nvie/vim-flake8'
-Plugin 'jnurmine/Zenburn'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'jasoncodes/ctrlp-modified.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'eugen0329/vim-esearch'
-Plugin 'fatih/vim-go'
-Plugin 'jparise/vim-graphql'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'iamcco/markdown-preview.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'brgmnn/vim-opencl'
-Plugin 'jez/vim-better-sml'
-Plugin 'neovimhaskell/haskell-vim'
-Plugin 'bitc/vim-hdevtools'
-Plugin 'jsfaint/gen_tags.vim'
-Plugin 'itchyny/lightline.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'JamshedVesuna/vim-markdown-preview'
-Plugin 'rhysd/vim-clang-format'
-Plugin 'tbastos/vim-lua'
-Plugin 'tikhomirov/vim-glsl'
-Plugin 'derekwyatt/vim-scala'
+Plug 'gmarik/Vundle.vim'
+Plug 'tmhedberg/SimpylFold'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'scrooloose/syntastic'
+Plug 'nvie/vim-flake8'
+Plug 'jnurmine/Zenburn'
+Plug 'altercation/vim-colors-solarized'
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'jasoncodes/ctrlp-modified.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'eugen0329/vim-esearch'
+Plug 'jparise/vim-graphql'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'iamcco/markdown-preview.vim'
+Plug 'mileszs/ack.vim'
+Plug 'brgmnn/vim-opencl'
+Plug 'jez/vim-better-sml'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'bitc/vim-hdevtools'
+Plug 'jsfaint/gen_tags.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-surround'
+Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'rhysd/vim-clang-format'
+Plug 'tbastos/vim-lua'
+Plug 'tikhomirov/vim-glsl'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
-" Since Vundle cannot specify plugin branch
-" TODO: switch to vim-plug or other plugin manager
-Plugin 'neoclide/coc.nvim', {'pinned': 1}
+Plug 'junegunn/fzf'
+Plug 'ajh17/VimCompletesMe'
 
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 
 let g:SimpylFold_docstring_preview=1
@@ -160,6 +160,24 @@ au FileType scala nmap <silent> gy <Plug>(coc-type-definition)
 au FileType scala nmap <silent> gi <Plug>(coc-implementation)
 au FileType scala nmap <silent> gr <Plug>(coc-references)))))
 au FileType scala autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" lsp configs
+set hidden
+let g:LanguageClient_hoverPreview = 'always'
+
+let g:LanguageClient_serverCommands = {
+       \ 'go': ['gopls'],
+       \ 'cpp': ['clangd'],
+       \ }
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
+" Run gofmt on save
+autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
 
 " ESC
 imap jj <ESC>
