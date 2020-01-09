@@ -5,3 +5,4 @@
 [core]
 	editor = vim
 	pager = less -q
+  excludesfile = ~/.gitignoreglobal
