@@ -54,3 +54,6 @@ set clipboard+=unnamedplus
 
 " ESC
 imap jj <ESC>
+
+" Set incremental search
+set incsearch
