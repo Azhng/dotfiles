@@ -24,7 +24,6 @@ Plug 'mileszs/ack.vim'
 Plug 'brgmnn/vim-opencl'
 Plug 'jez/vim-better-sml'
 Plug 'neovimhaskell/haskell-vim'
-Plug 'bitc/vim-hdevtools'
 Plug 'jsfaint/gen_tags.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-surround'
@@ -65,18 +64,10 @@ nmap <silent> <C-N> :NERDTreeToggle<CR>
 
 nnoremap <space> za
 
-" duplicate current buffer to new tab
-nnoremap f :tab split \| YcmCompleter GoToDefinition<CR>
-
 inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
 inoremap {{     {
 inoremap {}     {}
-
-inoremap (      ()<Left>
-inoremap (<CR>  (<CR>)<Esc>O
-inoremap ((     (
-inoremap ()     ()
 
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
@@ -101,9 +92,6 @@ set list
 set listchars=eol:$,tab:>-,trail:~,space:~,extends:>,precedes:<
 set tabstop=2 shiftwidth=2 expandtab
 
-let g:ycm_autoclose_preview_window_after_completion=0
-let g:ycm_global_ycm_extra_conf = '$HOME/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nmap <C-b><C-b> :GitGutterToggle<CR>
 let g:gitgutter_highlight_lines = 1
 let g:gitgutter_sign_added = 'xx'
@@ -136,11 +124,6 @@ let $VIMRUNTIME='$HOME/.local/share/nvim/runtime'
 " set nvim to use system clipboard
 set clipboard+=unnamedplus
 
-" vim-hdevtools
-au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
-au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsInfo<CR>
-au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsClear<CR>
-
 " glsl
 autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
 
@@ -149,17 +132,6 @@ let g:clang_format#auto_format = 1
 
 " gen_tags
 let g:gen_tags#blacklist = ['$HOME']
-
-" disable ycm for scala and let metals/coc handle it
-let g:ycm_filetype_blacklist = { 'scala': 1 }
-
-" Coc triggers
-au FileType scala inoremap <silent><expr> <c-space> coc#refresh()
-au FileType scala nmap <silent> gd <Plug>(coc-definition)
-au FileType scala nmap <silent> gy <Plug>(coc-type-definition)
-au FileType scala nmap <silent> gi <Plug>(coc-implementation)
-au FileType scala nmap <silent> gr <Plug>(coc-references)))))
-au FileType scala autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " lsp configs
 set hidden
@@ -170,11 +142,10 @@ let g:LanguageClient_serverCommands = {
        \ 'cpp': ['clangd'],
        \ }
 
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" Or map each action separately
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+nnoremap <silent> gR :call LanguageClient#textDocument_rename()<CR>
+nnoremap F :tab split \| :call LanguageClient#textDocument_definition()<CR>
 
 " Run gofmt on save
 autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
