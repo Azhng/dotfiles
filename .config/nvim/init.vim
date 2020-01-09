@@ -38,10 +38,10 @@ Plug 'autozimu/LanguageClient-neovim', {
 
 Plug 'junegunn/fzf'
 Plug 'ajh17/VimCompletesMe'
-
-" Bundle 'Valloric/YouCompleteMe'
+Plug 'uarun/vim-protobuf'
 
 call plug#end()
+
 filetype plugin indent on
 
 let g:SimpylFold_docstring_preview=1
