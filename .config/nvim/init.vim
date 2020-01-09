@@ -3,9 +3,7 @@ filetype off
 
 call plug#begin()
 
-Plug 'gmarik/Vundle.vim'
 Plug 'tmhedberg/SimpylFold'
-Plug 'vim-scripts/indentpython.vim'
 Plug 'scrooloose/syntastic'
 Plug 'nvie/vim-flake8'
 Plug 'jnurmine/Zenburn'
@@ -14,13 +12,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jasoncodes/ctrlp-modified.vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'eugen0329/vim-esearch'
 Plug 'jparise/vim-graphql'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.vim'
-Plug 'mileszs/ack.vim'
 Plug 'brgmnn/vim-opencl'
 Plug 'jez/vim-better-sml'
 Plug 'neovimhaskell/haskell-vim'
@@ -31,14 +26,9 @@ Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'rhysd/vim-clang-format'
 Plug 'tbastos/vim-lua'
 Plug 'tikhomirov/vim-glsl'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-
-Plug 'junegunn/fzf'
-Plug 'ajh17/VimCompletesMe'
+Plug 'fatih/vim-go'
 Plug 'uarun/vim-protobuf'
+Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
 
@@ -111,6 +101,10 @@ else
   colorscheme zenburn
 endif
 
+let g:ycm_autoclose_preview_window_after_completion=0
+let g:ycm_global_ycm_extra_conf = '$HOME/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 " ctrlp config
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = 'build'
@@ -132,15 +126,6 @@ let g:clang_format#auto_format = 1
 
 " gen_tags
 let g:gen_tags#blacklist = ['$HOME']
-
-" lsp configs
-set hidden
-let g:LanguageClient_hoverPreview = 'always'
-
-let g:LanguageClient_serverCommands = {
-       \ 'go': ['gopls'],
-       \ 'cpp': ['clangd'],
-       \ }
 
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
