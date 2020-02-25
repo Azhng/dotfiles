@@ -1,0 +1,1 @@
+export PATH=$HOME/go/bin:/usr/local/Cellar/go@1.12/1.12.15/bin/:$PATH
