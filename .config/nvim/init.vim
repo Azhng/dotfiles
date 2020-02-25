@@ -101,14 +101,12 @@ else
   colorscheme zenburn
 endif
 
-let g:ycm_autoclose_preview_window_after_completion=0
-let g:ycm_global_ycm_extra_conf = '$HOME/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " ctrlp config
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = 'build'
-let g:ctrlp_root_markers = ['.ctrlp', 'Makefile', 'CMakeLists.txt']
+let g:ctrlp_custom_ignore = 'target'
+let g:ctrlp_root_markers = ['.ctrlp', 'Makefile', 'CMakeLists.txt', 'go.mod', 'build.sbt', 'Cargo.toml']
 
 call togglebg#map("<F5>")
 
@@ -127,13 +125,25 @@ let g:clang_format#auto_format = 1
 " gen_tags
 let g:gen_tags#blacklist = ['$HOME']
 
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> gR :call LanguageClient#textDocument_rename()<CR>
-nnoremap F :tab split \| :call LanguageClient#textDocument_definition()<CR>
-
-" Run gofmt on save
-autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
-
 " ESC
 imap jj <ESC>
+
+" YCM Language server
+let g:ycm_language_server =
+  \ [
+  \   {
+  \     'name': 'scala',
+  \     'cmdline': [ 'metals-vim' ],
+  \     'filetypes': [ 'scala', 'sbt' ],
+  \     'project_root_files': [ 'build.sbt' ]
+  \   }
+  \ ]
+
+nnoremap <silent> gd :YcmCompleter GoTo<CR>
+nnoremap <silent> fi :YcmCompleter FixIt<CR>
+nnoremap <silent> gdc :YcmCompleter GetDoc<CR>
+nnoremap <silent> gtp :YcmCompleter GetType<CR>
+nnoremap <silent> yd :YcmDiags<CR>
+
+let g:ycm_autoclose_preview_window_after_completion=0
+let g:ycm_global_ycm_extra_conf = '$HOME/.config/nvim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'

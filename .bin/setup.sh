@@ -129,6 +129,21 @@ cd the_silver_searcher-$AG_VER
 make
 make install
 
+echo 'Setting up coursier:'
+cd $HOME/.local/tmp
+curl -L -o coursier https://git.io/vgvpD && chmod +x coursier
+mv coursier $HOME/.local/bin
+
+echo 'Setting up metals-vim:'
+coursier bootstrap \
+  --java-opt -Xss4m \
+  --java-opt -Xms100m \
+  --java-opt -Dmetals.client=vim-lsc \
+  org.scalameta:metals_2.12:0.8.0 \
+  -r bintray:scalacenter/releases \
+  -r sonatype:snapshots \
+  -o $HOME/.local/bin/metals-vim -f
+
 # TODO: migrate to curl install after fk stablize
 echo 'Installing fantastic-kit'
 cd $HOME/src/github.com
