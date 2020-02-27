@@ -26,7 +26,7 @@ Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'rhysd/vim-clang-format'
 Plug 'tbastos/vim-lua'
 Plug 'tikhomirov/vim-glsl'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'uarun/vim-protobuf'
 Plug 'ycm-core/YouCompleteMe'
 
@@ -127,6 +127,10 @@ let g:gen_tags#blacklist = ['$HOME']
 
 " ESC
 imap jj <ESC>
+
+" vim-go config
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
 " YCM Language server
 let g:ycm_language_server =
