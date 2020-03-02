@@ -2,3 +2,4 @@
 *.profile
 *.eg.go
 *.temp
+*.prof
