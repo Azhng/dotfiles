@@ -3,3 +3,5 @@ if [ -f '/home/az/.local/tmp/google-cloud-sdk/path.zsh.inc' ]; then . '/home/az/
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/az/.local/tmp/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/az/.local/tmp/google-cloud-sdk/completion.zsh.inc'; fi
+
+export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64/
