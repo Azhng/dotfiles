@@ -3,3 +3,7 @@ alias cat=bat
 alias mk=make
 alias sl=ls
 [[ $(uname) = "Linux" ]]; alias open=xdg-open
+
+function gtsh() {
+  git add -A && git commit -m "wip" && git checkout $@
+}
