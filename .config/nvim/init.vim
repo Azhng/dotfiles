@@ -29,6 +29,7 @@ Plug 'tikhomirov/vim-glsl'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'uarun/vim-protobuf'
 Plug 'ycm-core/YouCompleteMe'
+Plug 'rhysd/vim-grammarous'
 
 call plug#end()
 
