@@ -30,6 +30,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'uarun/vim-protobuf'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'rhysd/vim-grammarous'
+Plug 'Chiel92/vim-autoformat'
 
 call plug#end()
 
@@ -155,3 +156,9 @@ let g:ycm_global_ycm_extra_conf = '$HOME/.config/nvim/plugged/YouCompleteMe/thir
 
 " WSL compatibility
 set t_ut=""
+
+" vim autoformatter
+let g:formatdef_rustfmt = '"rustfmt"'
+let g:formatters_rust = ['rustfmt']
+
+au BufWrite * :Autoformat
