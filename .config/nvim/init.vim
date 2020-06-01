@@ -1,4 +1,4 @@
-set nocompatible 
+set nocompatible
 filetype off
 
 call plug#begin()
@@ -62,22 +62,22 @@ inoremap {{     {
 inoremap {}     {}
 
 au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=79 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set fileformat=unix
+      \ set tabstop=4 |
+      \ set softtabstop=4 |
+      \ set shiftwidth=4 |
+      \ set textwidth=79 |
+      \ set expandtab |
+      \ set autoindent |
+      \ set fileformat=unix
 
 " set SML keybinding
 autocmd BufRead *.sml :SMLReplStart
 autocmd FileType sml nnoremap <buffer> <C-j> :SMLReplBuild<CR>
 
 au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set shiftwidth=2
+      \ set tabstop=2 |
+      \ set softtabstop=2 |
+      \ set shiftwidth=2
 
 set encoding=utf-8
 set list
@@ -136,14 +136,14 @@ let g:go_info_mode='gopls'
 
 " YCM Language server
 let g:ycm_language_server =
-  \ [
-  \   {
-  \     'name': 'scala',
-  \     'cmdline': [ 'metals-vim' ],
-  \     'filetypes': [ 'scala', 'sbt' ],
-  \     'project_root_files': [ 'build.sbt' ]
-  \   }
-  \ ]
+      \ [
+      \   {
+      \     'name': 'scala',
+      \     'cmdline': [ 'metals-vim' ],
+      \     'filetypes': [ 'scala', 'sbt' ],
+      \     'project_root_files': [ 'build.sbt' ]
+      \   }
+      \ ]
 
 nnoremap <silent> gd :YcmCompleter GoTo<CR>
 nnoremap <silent> fi :YcmCompleter FixIt<CR>
@@ -161,4 +161,8 @@ set t_ut=""
 let g:formatdef_rustfmt = '"rustfmt"'
 let g:formatters_rust = ['rustfmt']
 
-au BufWrite * :Autoformat
+au BufWrite *.rs :Autoformat
+
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
