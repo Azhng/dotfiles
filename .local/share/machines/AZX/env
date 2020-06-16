@@ -6,3 +6,7 @@ if [ -f '/home/az/.local/tmp/google-cloud-sdk/completion.zsh.inc' ]; then . '/ho
 
 export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64/
 export PATH=$HOME/.cargo/env:$PATH
+
+# X Server stuff for WSL
+export WSL_HOST=$(dig +noall +answer $(hostname -s) | tail -1 | cut -f 6)
+export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
