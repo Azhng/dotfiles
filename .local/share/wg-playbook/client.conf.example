@@ -1,0 +1,14 @@
+[Interface]
+PrivateKey = <omit>
+Address = 10.66.66.3/32, fd42:42:42::3/64
+DNS = 10.66.66.1
+MTU = 1350
+
+[Peer]
+PublicKey = h7oBtCEISfwLf7Nyh8gSuA2bU5cNsITB1b4hkPo2jUU=
+AllowedIPs = 0.0.0.0/0, ::/0
+Endpoint = 45.33.51.207:51820
+
+[Peer]
+PublicKey = o7sdj38gfdk9ANS6AMuZTo3wX3LpoCO81mc970OYsx0=
+AllowedIPs = 10.66.66.2/32, fd42:42:42::2/128
