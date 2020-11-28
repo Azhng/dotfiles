@@ -18,7 +18,7 @@
 /.local/share/*
 !/.local/share/zsh_completion.d
 !/.local/share/machines
-!/.local/share/wg-playbook
+!/.local/share/playbooks
 !/.local/templates
 !/.local/share/config.site
 !/.latexmkrc
