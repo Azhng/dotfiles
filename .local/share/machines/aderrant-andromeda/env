@@ -10,3 +10,5 @@ export PATH=$HOME/.cargo/env:$PATH
 # X Server stuff for WSL
 export WSL_HOST=$(dig +noall +answer $(hostname -s) | tail -1 | cut -f 6)
 export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
+
+alias xsrv="/mnt/c/Program\ Files/VcXsrv/vcxsrv.exe :0 -ac -terminate -lesspointer -multiwindow -clipboard -wgl -dpi auto"
