@@ -1,7 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 unsetopt beep
 
-ZSH_THEME="agnoster"
+ZSH_THEME="tjkirch"
 
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting command-time)
 DEFAULT_USER=$USER
