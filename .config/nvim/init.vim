@@ -4,8 +4,6 @@ filetype off
 call plug#begin()
 
 Plug 'tmhedberg/SimpylFold'
-Plug 'scrooloose/syntastic'
-Plug 'nvie/vim-flake8'
 Plug 'jnurmine/Zenburn'
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
@@ -31,6 +29,7 @@ Plug 'uarun/vim-protobuf'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'rhysd/vim-grammarous'
 Plug 'Chiel92/vim-autoformat'
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
@@ -169,3 +168,8 @@ let g:autoformat_remove_trailing_spaces = 0
 
 " vim buffer setting
 set switchbuf=useopen,usetab
+
+" vim python linter setting.
+let g:ale_linters = {
+      \   'python': ['flake8', 'pylint'],
+      \ }
