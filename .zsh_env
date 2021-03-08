@@ -2,7 +2,7 @@ export PATH=$HOME/go/bin:/opt/ghc/bin:/opt/mattermost:$HOME/.cargo/bin:$HOME/.lo
 export LD_LIBRARY_PATH=$HOME/.local/lib:/usr/local/lib:$LD_LIBRARY_PATH
 export C_INCLUDE_PATH=$HOME/.local/include
 
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+# [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 [[ -e "/usr/bin/xdotool" ]] && export WINDOWID=$(xdotool getwindowfocus)
 
 # Allow machine specific config to take precedence.

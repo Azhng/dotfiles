@@ -1,7 +1,7 @@
-alias vim='VIMRUNTIME="$HOME/.local/share/nvim/runtime" nvim'
 alias cat=bat
 alias mk=make
 alias sl=ls
+alias vim=nvim
 [[ $(uname) = "Linux" ]]; alias open=xdg-open
 
 function gtsh() {
